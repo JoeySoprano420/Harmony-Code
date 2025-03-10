@@ -1,0 +1,31 @@
+<program> ::= <project_declaration> <global_scope>
+<global_scope> ::= <variable_declarations> | <function_declarations> | <event_declarations> | <entity_declarations>
+
+<project_declaration> ::= project <project_properties>
+<project_properties> ::= name: <string> | type: <string> | language: <string> | version: <string> | platform: <list> | frameworks: <list> | buildTools: <list> | debugMode: <boolean>
+
+<variable_declaration> ::= <identifier> : <type> = <expression>
+<type> ::= int | float | bool | string | list | map | vector3 | null
+
+<expression> ::= <literal> | <identifier> | <binary_expression> | <unary_expression>
+<literal> ::= <integer> | <float> | <string> | <boolean> | <null>
+
+<control_flow_statement> ::= if <expression> <block> else <block>
+<block> ::= { <statement>+ }
+
+<function_declaration> ::= function <identifier> (<parameters>) <block>
+<parameters> ::= <parameter> | <parameter>, <parameters>
+<parameter> ::= <identifier> : <type>
+
+<event_declaration> ::= on<event> <block>
+<event> ::= Start | Update | Render | End | KeyPress | MouseClick | NetworkMessage
+
+<import_statement> ::= import <module> from <source>
+<export_statement> ::= export <item> from <source>
+
+<async_function> ::= async function <identifier> (<parameters>) <block>
+<await_expression> ::= await <async_function_call>
+<async_function_call> ::= <identifier>(<parameters>)
+
+<error_handling> ::= try <block> catch <error_type> <block> finally <block>
+
