@@ -208,3 +208,36 @@ errorHandling
     onWarning(warning)
         logWarning("Warning: " + warning.message)
         displayWarningToUser(warning.message)
+
+# Import system modules
+import system.io
+
+# Function to calculate the square of a number
+fn calculate_square(n: i32) -> i32 {
+    return n * n
+}
+
+# Main function to execute the program
+fn main() {
+    # Variable Declaration
+    let result: i32 = calculate_square(5)
+
+    # Output the result
+    print("Square of 5 is: ", result)
+
+    # Inline Assembly for optimization
+    asm: mov eax, 2
+         mul eax, 3
+         mov result, eax
+
+    # Inline HTML
+    html: <div>Harmony-Code running in the browser!</div>
+
+    # Inline Bash Script
+    bash: echo "Running Harmony-Code"
+
+    # Security Setup
+    security: sandbox: allow read
+               allow write
+               encrypt_code: cipher="AES-256"
+}
